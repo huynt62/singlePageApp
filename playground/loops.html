@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <style>
+        .list-blog {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .list-blog .blog {
+            width: 21%;
+            margin: 2%;
+            border: 1px solid black;
+        }
+        .blog .title {
+            font-weight: 700;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <div class="user" v-for="user in arrUser" v-if="user.isActive">{{ user.email }}</div> -->
+        <div class="user" v-for="user in userActive">{{ user.email }}</div>
+
+        <hr>
+        <ul>
+            <li v-for="(value, key) in scores">{{ key }} : {{ value }}</li>
+        </ul>
+
+        <hr>
+        <div class="list-blog">
+            <div v-for="(blog, index) in listBlogs" class="blog" v-bind:key="index" >
+                <div class="title">{{ blog.title }}</div>
+                <div class="description">{{ blog.body }}</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            arrUser: [
+                { email: "test1@gmial.com", isActive: false },
+                { email: "test2@gmial.com", isActive: true },
+                { email: "test3@gmial.com", isActive: false },
+                { email: "test4@gmial.com", isActive: true },
+                { email: "test5@gmial.com", isActive: false },
+                { email: "test6@gmial.com", isActive: false },
+                { email: "test7@gmial.com", isActive: false }
+            ],
+            scores: {
+                math: 9.0,
+                english: 7.5,
+                physic: 7,
+            },
+            listBlogs: [
+                {
+                    "userId": 1,
+                    "id": 1,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 2,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 3,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 4,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 5,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 6,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 7,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 8,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 9,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+                {
+                    "userId": 1,
+                    "id": 10,
+                    "title": "sun aut facere repallat provident occaecati excepturi",
+                    "body": "quia et suscipit\nsuscipit recusandae consequutur expedita"
+                },
+            ],
+        },
+        methods: {},
+        computed: {
+            userActive() {
+                return user = this.arrUser.filter(function(u) {
+                    return u.isActive;
+                });
+                //return user;
+            }
+        }
+    })
+</script>
+</html>

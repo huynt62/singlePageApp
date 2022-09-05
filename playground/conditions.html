@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <style>
+        .tabs{
+            margin: 0;
+            padding: 0;
+        }
+        .tabs li {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #000;
+        }
+        .login, .register {
+            padding: 15px;
+            border: 2px solid blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul class="tabs">
+            <li v-on:click="changeTabs('login')">Dang Nhap</li>
+            <li v-on:click="changeTabs('register')">Dang Ky</li>
+        </ul>
+        <div class="login" v-if="tabSlected === 'login'">
+        <!-- <div class="login" v-show="tabSlected === 'login'"> -->
+            <h2>Form Dang Nhap</h2>
+            <form action="">
+                <input type="text" placeholder="Nhap username">
+                <input type="password" placeholder="Nhap password">
+            </form>
+        </div>
+        <!-- <div class="register" v-else> -->
+        <div class="register" v-else-if="tabSlected === 'register'">
+        <!-- <div class="login" v-show="tabSlected === 'register'"> -->
+            <h2>Form Dang Ky</h2>
+            <form action="">
+                <input type="text" placeholder="Nhap username">
+                <input type="password" placeholder="Nhap password">
+                <input type="password" placeholder="Nhap lai password">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            tabSlected: '',
+        },
+        methods: {
+            changeTabs(tab) {
+                this.tabSlected = tab;
+            }
+        }
+    })
+</script>
+</html>

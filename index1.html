@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <header><h1>Head</h1></header>
+    <div class="list-blog">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Repellat ipsum eum ratione quis, perferendis doloremque sequi quia fugit aut accusantium nulla.
+            Aliquam similique pariatur laudantium laboriosam soluta laborum tempora illum?
+        </p>
+    </div>
+    <div id="app">
+        <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
+        <p>{{ check ? 'vế bên trái' : 'vế bên phải' }}</p>
+        
+        <!-- Template Symtax -->
+        <h2>{{ say('World') }}</h2>
+        <!-- Template Symtax -->
+
+        <div class="wrapper-price">
+            <div class="final-price">{{ formartPrice() }}</div>
+            <div class="origin-price">20.000</div>
+            <div class="sale-price">-50%</div>
+        </div>
+    </div>
+    <footer><h1>Footer</h1></footer>
+</body>
+<script src="main1.js"></script>
+</html>
